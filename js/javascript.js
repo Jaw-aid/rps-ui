@@ -1,44 +1,68 @@
-/* pseudo code
+let options = ["rock", "paper", "scissors"];
+let playerWinMsg = "You win this round!";
+let computerWinMsg = "Computer wins this round.";
+let tieMsg = "Tie! Try again.";
 
-User enters in rock, paper, scissors, or other 
-If other then say please pick r, p, s
-If valid response, the computer will generate r, p, s
-Program will show to the user that the computer picked r, p, s 
-If match, show tie, try again 
-Depending on rules of the game, the winner will be announced 
 
-*/
-let options = ["rock", "paper", "scissors"]
-let playerSelection = "rock"
-let computerSelection = computerPlay()
-
-console.log("The computer picked: " + computerSelection)
-console.log("You picked: " + playerSelection)
-
+// computerPlay() will select a random value from the options array
 function computerPlay() {
     return options[Math.floor(Math.random(options) * options.length)]
 }
 
+// the playRound(playerSelection, computerSelection) determines the winner of the game 
 function playRound(playerSelection, computerSelection) {
     let playerSelection_lowercase = playerSelection.toLowerCase();
+    console.log("The computer picked: " + computerSelection)
+    console.log("You picked: " + playerSelection)
     
+    // if the user enters an invalid input, it will ask the user to submit their input again
+    if (playerSelection_lowercase !== "rock" && playerSelection_lowercase !== "paper" && playerSelection_lowercase !== "scissors") {
+        console.log("Redo round.")
+        alert("Pick rock, paper, or scissors -- try again.");
+        let playerSelection = prompt("Rock, paper, or scissors?")
+        let computerSelection = computerPlay()
+        return playRound(playerSelection, computerSelection);
+    }
+
     if (playerSelection_lowercase == computerSelection) {
-        return "Tie! Try again.";
+        return tieMsg;
     } else if (playerSelection_lowercase == "rock" && computerSelection == "scissors"){
-        return "You win!";
+        return playerWinMsg;
     } else if (playerSelection_lowercase == "scissors" && computerSelection == "paper"){
-        return "You win!";
+        return playerWinMsg;
     } else if (playerSelection_lowercase == "paper" && computerSelection == "rock"){
-        return "You win!";
+        return playerWinMsg;
     } else if (playerSelection_lowercase == "paper" && computerSelection == "rock"){
-        return "Computer wins.";
+        return computerWinMsg;
     } else if (playerSelection_lowercase == "paper" && computerSelection == "scissors"){
-        return "Computer wins.";
+        return computerWinMsg;
     } else if (playerSelection_lowercase == "rock" && computerSelection == "paper"){
-        return "Computer wins.";
+        return computerWinMsg;
     } else if (playerSelection_lowercase == "scissors" && computerSelection == "rock"){
-        return "Computer wins."
+        return computerWinMsg;
     }
 }
 
-console.log(playRound(playerSelection, computerSelection))
+// this function starts the game and keeps track of the score
+function game() {
+    let computerScore = 0;
+    let playerScore = 0; 
+    for (let i = 0; i < 3; i++) {
+        let playerSelection = prompt("Rock, paper, or scissors?");
+        let computerSelection = computerPlay();
+        let winnerMessage = playRound(playerSelection, computerSelection);
+        console.log(winnerMessage);
+        if (winnerMessage == computerWinMsg) {
+            computerScore++;
+        } else if (winnerMessage == playerWinMsg) {
+            playerScore++;
+        } 
+    }
+    if (computerScore > playerScore) {
+        console.log("Computer wins the series.")
+    } else if (computerScore < playerScore) {
+        console.log("You win the series!")
+    } else if (computerScore == playerScore) {
+        console.log("The series is a tie!")
+    }
+}
