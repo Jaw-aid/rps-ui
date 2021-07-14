@@ -1,9 +1,96 @@
 body {
-    background-color: black;
-    color: white;
+    background-color: #ff7700;
+    color: black;
     text-align: center;
 }
 
 code {
     color: orange;
+}
+
+.headline {
+    font-size: 1.75em;
+}
+.scoreboardGrid {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "a b c d"
+    "e f g h";
+    border: black;
+    margin-bottom: 2em;
+}
+
+.youScoreLabel {
+    font-size: 2.5em;
+    font-weight: bold;
+    grid-area: b;
+}
+
+.computerScoreLabel {
+    font-size: 2.5em;
+    font-weight: bold;
+    grid-area: c;
+}
+
+.youScore {
+    font-size: 2.5em;
+    font-weight: bold;
+    grid-area: f;
+}
+
+.computerScore {
+    font-size: 2.5em;
+    font-weight: bold;
+    grid-area: g;
+}
+
+.playerChoicesImagesGrid {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 21em;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.playerChoicesTextGrid {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 33% 33% 33%;
+    height: 4em;
+}
+
+.playerChoicesImages {
+    width: 20em;
+}
+
+
+.playerChoicesImages:hover {
+    width:21em;
+}
+
+.showChoicesGrid {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: auto;
+    grid-template-areas:
+    "a b c d";
+    height: 4em;
+}
+
+.youPick {
+    grid-area: b;
+    font-size: 1.5em; 
+    font-weight: bolder;
+}
+
+.computerPick {
+    grid-area: c;
+    font-size: 1.5em; 
+    font-weight: bolder;
 }
