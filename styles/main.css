@@ -19,12 +19,13 @@ code {
     grid-template-rows: auto;
     grid-template-areas:
     "a b c d"
-    "e f g h";
+    "e f g h"
+    "i i i i";
     border: black;
     margin-bottom: 2em;
 }
 
-.youScoreLabel {
+.playerScoreLabel {
     font-size: 2.5em;
     font-weight: bold;
     grid-area: b;
@@ -36,7 +37,7 @@ code {
     grid-area: c;
 }
 
-.youScore {
+.playerScore {
     font-size: 2.5em;
     font-weight: bold;
     grid-area: f;
@@ -48,6 +49,11 @@ code {
     grid-area: g;
 }
 
+.winnerMessage {
+    font-size: 2.5em;
+    font-weight: bold;
+    grid-area: i;
+}
 .playerChoicesImagesGrid {
     display: grid;
     align-items: center;
@@ -61,13 +67,15 @@ code {
     align-items: center;
     justify-items: center;
     grid-template-columns: 33% 33% 33%;
-    height: 4em;
+    /* height: 4em; */
+    width: 100%;
+    max-height: 100%;
 }
 
 .playerChoicesImages {
-    width: 20em;
+    width: 100%;
+    max-height: 100%;
 }
-
 
 .playerChoicesImages:hover {
     width:21em;
@@ -79,18 +87,25 @@ code {
     justify-items: center;
     grid-template-columns: auto;
     grid-template-areas:
-    "a b c d";
+    "a b c d"
+    "e e e e";
     height: 4em;
 }
 
-.youPick {
+.playerPickText {
     grid-area: b;
     font-size: 1.5em; 
     font-weight: bolder;
 }
 
-.computerPick {
+.computerPickText {
     grid-area: c;
+    font-size: 1.5em; 
+    font-weight: bolder;
+}
+
+.tieText {
+    grid-area: e;
     font-size: 1.5em; 
     font-weight: bolder;
 }
