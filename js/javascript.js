@@ -105,3 +105,5 @@ Areas for improvement:
 2. Need to make the paper image the same size as the other images 
 3. Remove innerHTML from code 
 */
+
+// testing commit
