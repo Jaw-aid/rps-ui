@@ -1,9 +1,111 @@
 body {
-    background-color: black;
-    color: white;
+    background-color: #ff7700;
+    color: black;
     text-align: center;
 }
 
 code {
     color: orange;
+}
+
+.headline {
+    font-size: 1.75em;
+}
+.scoreboardGrid {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "a b c d"
+    "e f g h"
+    "i i i i";
+    border: black;
+    margin-bottom: 2em;
+}
+
+.playerScoreLabel {
+    font-size: 2.5em;
+    font-weight: bold;
+    grid-area: b;
+}
+
+.computerScoreLabel {
+    font-size: 2.5em;
+    font-weight: bold;
+    grid-area: c;
+}
+
+.playerScore {
+    font-size: 2.5em;
+    font-weight: bold;
+    grid-area: f;
+}
+
+.computerScore {
+    font-size: 2.5em;
+    font-weight: bold;
+    grid-area: g;
+}
+
+.winnerMessage {
+    font-size: 2.5em;
+    font-weight: bold;
+    grid-area: i;
+}
+.playerChoicesImagesGrid {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 21em;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.playerChoicesTextGrid {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 33% 33% 33%;
+    /* height: 4em; */
+    width: 100%;
+    max-height: 100%;
+}
+
+.playerChoicesImages {
+    width: 100%;
+    max-height: 100%;
+}
+
+.playerChoicesImages:hover {
+    width:21em;
+}
+
+.showChoicesGrid {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: auto;
+    grid-template-areas:
+    "a b c d"
+    "e e e e";
+    height: 4em;
+}
+
+.playerPickText {
+    grid-area: b;
+    font-size: 1.5em; 
+    font-weight: bolder;
+}
+
+.computerPickText {
+    grid-area: c;
+    font-size: 1.5em; 
+    font-weight: bolder;
+}
+
+.tieText {
+    grid-area: e;
+    font-size: 1.5em; 
+    font-weight: bolder;
 }

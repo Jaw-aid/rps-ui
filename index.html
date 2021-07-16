@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="js/javascript.js"></script>
+    <title>Rock, Paper, Scissors</title>
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
     <div class="headline">
-      <h2>Go to console and enter in <code>game()</code> to start playing rock, paper, scissors.</h2>
+      <h1>Rock, Paper, Scissors</h1>
     </div>
+    <div class="scoreboardGrid">
+        <div class="playerScoreLabel">PLAYER</div>
+        <div class="computerScoreLabel">COMPUTER</div>
+        <div class="playerScore" id="playerScore">0</div>
+        <div class="computerScore" id="computerScore">0</div>
+        <div class="winnerMessage" id="winnerMessage"></div>
+    </div>
+
+    <div class="playerChoicesImagesGrid">
+      <img class="playerChoicesImages" id="#rock" src="assets/images/rock.png">
+      <img class="playerChoicesImages" id="#paper" src="assets/images/paper.png">
+      <img class="playerChoicesImages" id="#scissors" src="assets/images/scissors.png">
+    </div>
+
+    <div class="playerChoicesTextGrid">
+      <h2>Rock</h2>
+      <h2>Paper</h2>
+      <h2>Scissors</h2>
+    </div>
+    <div class="showChoicesGrid">
+      <div class="playerPickText" id="playerPickText">Player picked:
+        <span id="playerPick"></span>
+      </div>
+      <div class="computerPickText" id="computerPickText">Computer picked:
+        <span id="computerPick"></span>
+      </div>
+      <div class="tieText" id="tieText">
+      </div>
+    </div>
+    <script src="js/javascript.js"></script>
   </body>
 </html>
